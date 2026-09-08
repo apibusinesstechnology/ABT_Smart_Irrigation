@@ -1,0 +1,137 @@
+image: node:22
+
+stages:
+  - install
+  - lint
+  - test
+  - e2e
+  - load
+  - mutation
+  - sonar
+  - terraform
+  - ansible
+  - build
+  - deploy
+
+workflow:
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "dev"'
+    - if: '$CI_COMMIT_BRANCH == "main"'
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules/
+    - .next/cache/
+
+###############################################
+# LAYER 1 — DEV BRANCH (test rapid + optimisation)
+###############################################
+
+install_dependencies:
+  stage: install
+  script:
+    - npm ci
+  artifacts:
+    paths:
+      - node_modules/
+
+lint_code:
+  stage: lint
+  script:
+    - npm run lint
+    - npm run prettier
+  allow_failure: false
+
+unit_integration_tests:
+  stage: test
+  script:
+    - npm run test:unit
+    - npm run test:integration
+    - npm run test:component
+  artifacts:
+    paths:
+      - coverage/
+    expire_in: 1 week
+
+###############################################
+# LAYER 2 — MAIN BRANCH (quality enterprise)
+###############################################
+
+e2e_tests:
+  stage: e2e
+  script:
+    - npx playwright install
+    - npm run test:e2e
+  only:
+    - main
+
+load_tests:
+  stage: load
+  script:
+    - npm run test:load
+  only:
+    - main
+
+mutation_tests:
+  stage: mutation
+  script:
+    - npm run mutate
+  only:
+    - main
+
+sonarqube_scan:
+  stage: sonar
+  image: sonarsource/sonar-scanner-cli:latest
+  variables:
+    SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar"
+    GIT_DEPTH: "0"
+  script:
+    - sonar-scanner
+      -Dsonar.projectKey=MF
+      -Dsonar.organization=apibusiness
+      -Dsonar.sources=src
+      -Dsonar.tests=dossier_test
+      -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
+      -Dsonar.host.url=$SONAR_HOST_URL
+      -Dsonar.login=$SONAR_TOKEN
+  allow_failure: false
+  only:
+    - main
+
+terraform_apply:
+  stage: terraform
+  image: hashicorp/terraform:latest
+  script:
+    - terraform init
+    - terraform validate
+    - terraform plan
+    - terraform apply -auto-approve
+  only:
+    - main
+
+ansible_deploy:
+  stage: ansible
+  image: cytopia/ansible:latest
+  script:
+    - ansible-playbook -i inventory deploy.yml
+  only:
+    - main
+
+build_project:
+  stage: build
+  script:
+    - npm run build
+  artifacts:
+    paths:
+      - .next/
+      - dist/
+  only:
+    - main
+
+deploy_prod:
+  stage: deploy
+  script:
+    - echo "Déploiement en production..."
+  only:
+    - main
