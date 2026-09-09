@@ -1,0 +1,34 @@
+{
+  "name": "backend_smart_irrigation",
+  "version": "1.0.0",
+  "description": "Dossier de backend du logiciel smart irrigation system",
+  "keywords": [
+    "IoT"
+  ],
+  "homepage": "https://gitlab.com/apibusinesstechnology-group/abt_smart_irrigation#readme",
+  "bugs": {
+    "url": "https://gitlab.com/apibusinesstechnology-group/abt_smart_irrigation/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/apibusinesstechnology-group/abt_smart_irrigation.git"
+  },
+  "license": "UNLICENSED",
+  "author": "Pierre Richard Saint Louis_API Business TEchnology",
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "start" : "node main.js",
+    "dev": "nodemon main.js",
+    "test": "npm run test"
+  },
+  "dependencies": {
+    "compression": "^1.8.1",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "helmet": "^8.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
