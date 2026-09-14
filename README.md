@@ -1,4 +1,4 @@
-# 🌱 **README — Smart Irrigation System (Version PRO MAX)**  
+# 🌱 **README — Smart Irrigation System**  
 ### *Système d’irrigation intelligent basé sur l’IoT, l’automatisation et l’analyse de données*
 
 ---
