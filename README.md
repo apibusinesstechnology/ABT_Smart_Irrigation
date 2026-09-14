@@ -1,93 +1,209 @@
-# ABT_Smart_Irrigation
+# 🌱 **README — Smart Irrigation System (Version PRO MAX)**  
+### *Système d’irrigation intelligent basé sur l’IoT, l’automatisation et l’analyse de données*
 
+---
 
+<div align="center">
+  <img src="logo-smart-irrigation.png" alt="Smart Irrigation Logo" width="180" />
+</div>
 
-## Getting started
+---
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+## Présentation du projet
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+**Smart Irrigation System** est une solution intelligente permettant d’automatiser l’irrigation agricole grâce à des capteurs IoT, une API centralisée, des règles d’irrigation dynamiques et un tableau de bord moderne.
 
-## Add your files
+Le système optimise l’utilisation de l’eau, améliore la productivité agricole et permet une gestion intelligente des ressources.
 
-* [Create](https://docs.gitlab.com/user/project/repository/web_editor/#create-a-file) or [upload](https://docs.gitlab.com/user/project/repository/web_editor/#upload-a-file) files
-* [Add files using the command line](https://docs.gitlab.com/topics/git/add_files/#add-files-to-a-git-repository) or push an existing Git repository with the following command:
+Ce projet fait partie de l’écosystème technologique d’**API Business Technology**.
+
+---
+
+## Objectifs du système
+
+Smart Irrigation permet de :
+
+- Automatiser l’irrigation selon l’humidité du sol, la météo et les règles définies  
+- Collecter et analyser les données des capteurs en temps réel  
+- Contrôler les pompes à distance via MQTT  
+- Réduire la consommation d’eau  
+- Améliorer la productivité agricole  
+- Offrir une interface moderne pour la supervision complète du système  
+
+---
+
+## Fonctionnalités principales
+
+### Capteurs IoT
+- Humidité du sol  
+- Température  
+- Luminosité  
+- Débit d’eau  
+- Niveau de réservoir  
+
+### Automatisation intelligente
+- Activation/désactivation automatique des pompes  
+- Règles d’irrigation personnalisées  
+- Gestion des cycles d’arrosage  
+- Mode manuel ou automatique  
+
+### Tableau de bord moderne
+- Visualisation des capteurs  
+- Statistiques d’irrigation  
+- Historique des actions  
+- Graphiques de consommation d’eau  
+
+### Alertes intelligentes
+- Niveau d’eau bas  
+- Capteur inactif  
+- Débit anormal  
+- Pompes hors service  
+
+---
+
+## Architecture globale
 
 ```
-cd existing_repo
-git remote add origin https://gitlab.com/apibusinesstechnology-group/abt_smart_irrigation.git
-git branch -M main
-git push -uf origin main
+Smart Irrigation System
+│
+├── IoT (ESP32 + Capteurs)
+│   ├── Humidité du sol
+│   ├── Température
+│   ├── Luminosité
+│   └── Débit d’eau
+│
+├── Communication (MQTT)
+│   ├── Broker
+│   └── Topics IoT
+│
+├── Backend (Node.js / NestJS)
+│   ├── API REST
+│   ├── Règles d’irrigation
+│   ├── Gestion des pompes
+│   └── Sécurité & Authentification
+│
+├── Frontend (Next.js / React)
+│   ├── Tableau de bord
+│   ├── Capteurs
+│   └── Historique
+│
+└── DevOps
+    ├── GitLab CI/CD
+    ├── Tests automatisés
+    ├── SonarQube
+    ├── Stryker
+    ├── Monitoring
+    └── Infrastructure sécurisée
 ```
 
-## Integrate with your tools
+---
 
-* [Set up project integrations](https://gitlab.com/apibusinesstechnology-group/abt_smart_irrigation/-/settings/integrations)
+## Technologies utilisées
 
-## Collaborate with your team
+### IoT
+- ESP32  
+- Capteurs analogiques et numériques  
+- MQTT  
 
-* [Invite team members and collaborators](https://docs.gitlab.com/user/project/members/)
-* [Create a new merge request](https://docs.gitlab.com/user/project/merge_requests/creating_merge_requests/)
-* [Automatically close issues from merge requests](https://docs.gitlab.com/user/project/issues/managing_issues/#closing-issues-automatically)
-* [Enable merge request approvals](https://docs.gitlab.com/user/project/merge_requests/approvals/)
-* [Set auto-merge](https://docs.gitlab.com/user/project/merge_requests/auto_merge/)
+### Backend
+- Node.js  
+- NestJS  
+- TypeScript  
 
-## Test and Deploy
+### Frontend
+- React  
+- Next.js  
+- TailwindCSS  
 
-Use the built-in continuous integration in GitLab.
+### DevOps
+- GitLab CI/CD  
+- SonarQube  
+- Stryker Mutation Testing  
+- Docker  
+- Azure  
 
-* [Get started with GitLab CI/CD](https://docs.gitlab.com/ci/quick_start/)
-* [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/user/application_security/sast/)
-* [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/topics/autodevops/requirements/)
-* [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/user/clusters/agent/)
-* [Set up protected environments](https://docs.gitlab.com/ci/environments/protected_environments/)
+---
 
-***
+## Installation & Déploiement
 
-# Editing this README
+### Backend
+```bash
+npm install
+npm run build
+npm start
+```
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+### Frontend
+```bash
+npm install
+npm run dev
+```
 
-## Suggestions for a good README
+### IoT
+- Configurer les topics MQTT  
+- Définir les seuils d’humidité  
+- Connecter les capteurs à l’ESP32  
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+### Déploiement
+- Pipeline GitLab CI/CD  
+- Environnements : dev → staging → production  
+- Déploiement sécurisé via Azure  
 
-## Name
-Choose a self-explaining name for your project.
+---
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+## Documentation API (aperçu)
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+### Capteurs
+- `GET /sensors`  
+- `POST /sensors/update`  
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+### Pompes
+- `POST /pump/on`  
+- `POST /pump/off`  
+- `GET /pump/status`  
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+### Règles d’irrigation
+- `GET /rules`  
+- `POST /rules/create`  
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+### Historique
+- `GET /history`  
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+---
 
 ## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+### 2026
+- IoT v1  
+- Dashboard v1  
+- Règles d’irrigation basiques  
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+### 2027
+- IA prédictive (analyse météo + sol)  
+- Optimisation automatique des cycles  
+- Détection d’anomalies avancée  
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+### 2028
+- Version entreprise  
+- Intégration cloud complète  
+- Gestion multi‑fermes  
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+---
 
-## License
-For open source projects, say how it is licensed.
+## Licence
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+Ce projet est **UNLICENSED**.  
+Aucune permission n’est accordée pour utiliser, copier, modifier ou distribuer ce logiciel sans autorisation explicite du propriétaire.
+
+Tous droits réservés.  
+© API Business Technology – Projet Smart Irrigation System
+
+---
+
+## Contact
+
+**Fondateur & CEO : Pierre Richard Saint Louis**  
+API Business Technology  
+Ottawa, Ontario, Canada
+
+---
