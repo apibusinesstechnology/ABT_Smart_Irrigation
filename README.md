@@ -4,7 +4,7 @@
 ---
 
 <div align="center">
-  <img src="logo-smart-irrigation.png" alt="Smart Irrigation Logo" width="180" />
+  <img src="logo_SmartIrrigation.png" alt="Smart Irrigation Logo" width="180" />
 </div>
 
 ---
