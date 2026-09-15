@@ -1,0 +1,6 @@
+{
+  "mutate": ["src/**/*.ts"],
+  "testRunner": "jest",
+  "reporters": ["html", "clear-text"],
+  "coverageAnalysis": "off"
+}
