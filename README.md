@@ -98,6 +98,53 @@ Smart Irrigation System
 
 ---
 
+## Objectif du Projet
+
+Le projet **Smart Irrigation** vise à optimiser l’utilisation de l’eau dans les exploitations agricoles grâce à l’IoT, l’automatisation et l’analyse intelligente.  
+Il permet de réduire la consommation d’eau tout en améliorant la santé des cultures.
+
+---
+
+## Rôle dans l’Écosystème API Business Technology
+
+Ce projet fait partie de la suite **Smart Farm**.  
+Il occupe le rôle suivant :
+
+- **Fonction technique :** Backend + IoT + Automatisation  
+- **Responsabilité :**  
+  - Gestion intelligente de l’irrigation  
+  - Analyse des données des sols  
+  - Déclenchement automatique de l’arrosage  
+  - Intégration avec Smart Farm Animal et Smart Farm Dashboard
+
+---
+
+## Problème résolu
+
+- Surconsommation d’eau  
+- Irrigation non contrôlée  
+- Absence de données sur l’humidité des sols  
+- Manque d’automatisation dans les fermes
+
+---
+
+## Utilisateurs ciblés
+
+- Fermes agricoles  
+- Serres intelligentes  
+- Coopératives  
+- Municipalités (espaces verts)
+
+---
+
+## Intégration avec les autres services
+
+- Smart Farm Animal  
+- Smart Farm Dashboard  
+- Modules IA internes  
+- Services IoT
+
+
 ## Technologies utilisées
 
 ### IoT
@@ -168,6 +215,90 @@ npm run dev
 
 ### Historique
 - `GET /history`  
+
+---
+## Documentation Fonctionnelle / API
+
+Cette section présente les fonctionnalités principales du projet ainsi que la structure générale de son API.
+
+---
+
+### Endpoints principaux
+
+| Méthode | Endpoint | Description |
+|--------|----------|-------------|
+| GET    | /resource | Récupération des données principales |
+| POST   | /resource | Création d’une nouvelle ressource |
+| PUT    | /resource/:id | Mise à jour d’une ressource existante |
+| DELETE | /resource/:id | Suppression d’une ressource |
+
+> Remplacer **resource** par le nom réel selon le projet  
+> (ex : `/animals`, `/stocks`, `/alerts`, `/users`, etc.)
+
+---
+
+### Paramètres importants
+
+- **id** : Identifiant unique de la ressource  
+- **token** : Jeton d’authentification (JWT)  
+- **animalId / stockId / userId** : Identifiants spécifiques selon le projet  
+- **limit / page** : Paramètres de pagination  
+- **filter** : Filtrage des données  
+
+---
+
+### Réponses de l’API
+
+- **200 – Succès**  
+  La requête a été traitée correctement.
+
+- **201 – Créé**  
+  Une nouvelle ressource a été ajoutée.
+
+- **400 – Erreur de validation**  
+  Paramètres manquants ou invalides.
+
+- **401 – Non authentifié**  
+  Jeton invalide ou absent.
+
+- **403 – Non autorisé**  
+  L’utilisateur n’a pas les permissions nécessaires.
+
+- **404 – Introuvable**  
+  Ressource inexistante.
+
+- **500 – Erreur serveur**  
+  Problème interne du système.
+
+---
+
+### Sécurité
+
+- **JWT** pour l’authentification  
+- **RBAC** (Role-Based Access Control) pour la gestion des permissions  
+- **Chiffrement** des données sensibles  
+- **Audit logs** pour tracer les actions importantes  
+- **Validation stricte** des entrées utilisateur  
+
+---
+
+### Modules / Fonctionnalités principales
+
+- Fonctionnalité 1 : [Décrire la fonction principale du projet]  
+- Fonctionnalité 2 : [Décrire une fonction secondaire]  
+- Fonctionnalité 3 : [Décrire une interaction avec un autre service]  
+
+> Remplacer ces lignes par les vraies fonctionnalités selon le repo.
+
+---
+
+### Intégration dans l’écosystème API Business Technology
+
+Ce projet fait partie de l’écosystème global et interagit avec :
+
+- [Nom du produit principal]  
+- [Backend / Frontend / DevOps / IA / IoT]  
+- [Autres services liés]  
 
 ---
 
