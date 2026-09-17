@@ -301,23 +301,88 @@ Ce projet fait partie de l’écosystème global et interagit avec :
 - [Autres services liés]  
 
 ---
+## Sécurité & Confidentialité
 
-## Roadmap
+Le module **Smart Irrigation** gère des données provenant de capteurs IoT liés à l’humidité du sol, à la météo et aux systèmes d’arrosage.  
+La sécurité est essentielle pour garantir la fiabilité du système et la protection des infrastructures agricoles.
 
-### 2026
-- IoT v1  
-- Dashboard v1  
-- Règles d’irrigation basiques  
+### Principes de sécurité appliqués
+- Chiffrement des communications IoT (TLS, MQTT sécurisé)
+- Authentification par jetons (JWT)
+- Gestion des permissions (RBAC) pour les exploitants agricoles
+- Validation stricte des données des capteurs (humidité, température, pression)
+- Protection contre les attaques API (injections, brute force, replay)
+- Journalisation des actions critiques (activation/désactivation de l’arrosage)
 
-### 2027
-- IA prédictive (analyse météo + sol)  
-- Optimisation automatique des cycles  
-- Détection d’anomalies avancée  
+### Confidentialité
+- Aucune donnée personnelle n’est stockée dans ce dépôt
+- Les identifiants des capteurs sont masqués dans les environnements de test
+- Les systèmes réels respectent les normes canadiennes de protection des données agricoles
 
-### 2028
-- Version entreprise  
-- Intégration cloud complète  
-- Gestion multi‑fermes  
+Smart Irrigation garantit une gestion sécurisée et conforme des données IoT liées à l’arrosage intelligent.
+```
+
+---
+
+## Installation & Déploiement (Modèle)
+
+Ce dépôt représente le backend IoT du système **Smart Irrigation**, responsable de la gestion intelligente de l’eau.
+
+### Prérequis
+- Node.js ou Python (selon l’implémentation réelle)
+- Git
+- Accès à un broker MQTT ou API IoT
+- Variables d’environnement pour les capteurs et les modules météo
+
+### Installation (modèle)
+```bash
+git clone https://gitlab.com/api-business-technology/smart-irrigation-backend
+cd smart-irrigation-backend
+```
+
+### Déploiement (modèle)
+- Configuration des capteurs d’humidité du sol
+- Intégration avec les modules météo (API)
+- Déploiement sur un serveur cloud
+- Activation des modules IA pour la prédiction d’arrosage
+- Connexion avec Smart Farm Dashboard
+
+Ce guide représente la structure générale du déploiement réel.
+```
+
+---
+
+```md
+## Roadmap (Modèle)
+
+### Q1 — Fondation
+- Architecture IoT
+- Structure du backend
+- Documentation API
+
+### Q2 — Automatisation intelligente
+- Déclenchement automatique de l’arrosage
+- Analyse des données du sol
+- Intégration météo
+
+### Q3 — Optimisation
+- Réduction de la consommation d’eau
+- Sécurité renforcée
+- Tests IoT avancés
+
+### Q4 — Scalabilité
+- Support de milliers de capteurs
+- Optimisation cloud
+- Intégration complète Smart Farm
+
+### Vision 2027
+- IA prédictive pour l’arrosage intelligent
+- Automatisation avancée des exploitations agricoles
+
+### Vision 2030
+- Plateforme agricole intelligente unifiée
+- Gestion autonome de l’irrigation
+```
 
 ---
 
